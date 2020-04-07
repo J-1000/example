@@ -1,0 +1,123 @@
+* {
+  font-family: "Verdana", "Arial", "Sans-Serif";
+  margin: 0;
+  box-sizing: border-box; /*as oppossed to content-box. Border-box adds padding&margin WITHIN box, i.e. shrinks the box size to keep original measurements*/
+}
+
+body {
+  background-image: url("./imgs/sharon-mccutcheon-ouRjPLWGbPc-unsplash.jpg");
+  background-size: cover;
+  height: 100vh; /*i.e. 100% of available height space*/
+}
+
+h1 {
+  padding: 1%;
+  border-style: solid;
+  width: 30%;
+  font-size: 40px;
+}
+
+p {
+  font-weight: bold;
+  border-style: solid;
+  font-size: 24px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-evenly;
+  border-style: solid;
+}
+
+.game-stats {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-style: solid;
+}
+
+#memory-board {
+  border: solid;
+  width: 75%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 1%;
+  perspective: 1000px;
+}
+
+.card {
+  display: flex;
+  align-items: stretch;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:active {
+  transform: scale(0.96);
+  transition: transform 0.2s;
+}
+
+/*.card.flip {
+  /*pointer-events: none;
+}
+*/
+
+.card.flip {
+  pointer-events: none;
+}
+
+.card.flip .front {
+  transform: rotateY(0deg);
+}
+.card.flip .back {
+  transform: rotateY(180deg);
+}
+
+.card .back,
+.card .front {
+  display: flex;
+  width: 140px;
+  height: 90%;
+  margin: 0.5%;
+  border-radius: 10px;
+  transition: transform 0.4s;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  /* background-color: #456783; */
+  background-image: url("./imgs/card-background-2.jpg");
+  background-size: cover;
+  /* transform: rotateY(180deg); */
+}
+
+.card .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateY(180deg) /*translateZ(1px)*/;
+  background-color: #fff;
+  background-size: cover;
+}
+/*
+#Level {
+  background-color: rgba(215, 44, 44, 0.8);
+  border-radius: 8px;
+  font-size: 30px;
+  font-family: Arial;
+  width: 200px;
+  padding: 20px;
+  padding-top: 0;
+  margin-left: 75%;
+}
+*/
+/*
+.container {
+  position: relative;
+}
+*/
